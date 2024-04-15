@@ -25,7 +25,10 @@ function Login() {
     html = (<Loading />);
   } else {
     html = (
-      <div className="login-container">
+      <form
+        className="login-container"
+        onSubmit={ (event) => event.preventDefault() }
+      >
         <input
           onChange={ (event) => handleChange(event) }
           type="text"
@@ -38,7 +41,7 @@ function Login() {
         >
           Entrar
         </button>
-      </div>
+      </form>
     );
   }
 
