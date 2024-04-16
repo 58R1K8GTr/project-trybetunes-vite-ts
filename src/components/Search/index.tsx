@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Loading from '../Loading';
 import searchAlbumsAPI from '../../services/searchAlbumsAPI';
-import CardAlbum from '../CardAlbum';
+import AlbumCard from '../AlbumCard';
 
 function Search() {
   const [disabled, setDisabled] = useState(true);
@@ -15,19 +15,17 @@ function Search() {
   }
 
   async function handleClick() {
-    const variableAuxiliary = name;
-    setName('');
     setExecutionState('loading');
-    const result = await searchAlbumsAPI(variableAuxiliary);
+    const result = await searchAlbumsAPI(name);
     let resultSearchHtml;
     if (result.length) {
       resultSearchHtml = (
         <>
-          <h2>{ `Resultado de álbuns de: ${variableAuxiliary}` }</h2>
+          <h2>{ `Resultado de álbuns de: ${name}` }</h2>
           <div>
             {
               result.map((album) => {
-                return <CardAlbum key={ album.artworkUrl100 } album={ album } />;
+                return <AlbumCard key={ album.artworkUrl100 } album={ album } />;
               })
             }
           </div>
@@ -36,6 +34,7 @@ function Search() {
     } else {
       resultSearchHtml = <p>Nenhum álbum foi encontrado</p>;
     }
+    setName('');
     setResultSearch(resultSearchHtml);
     setExecutionState('finished');
   }

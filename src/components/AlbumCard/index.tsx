@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { AlbumType } from '../../types';
 
-function CardAlbum({ album }: { album: AlbumType }) {
+function AlbumCard({ album }: { album: AlbumType }) {
   const { collectionId, collectionName, artworkUrl100 } = album;
   return (
     <div>
@@ -16,4 +16,4 @@ function CardAlbum({ album }: { album: AlbumType }) {
   );
 }
 
-export default CardAlbum;
+export default AlbumCard;
