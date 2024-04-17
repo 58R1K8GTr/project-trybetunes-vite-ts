@@ -39,7 +39,7 @@ function Search() {
     setExecutionState('finished');
   }
 
-  const html = (
+  return (
     <>
       <form
         onSubmit={ (event) => event.preventDefault() }
@@ -62,8 +62,6 @@ function Search() {
       { executionState === 'finished' && resultSearch }
     </>
   );
-
-  return html;
 }
 
 export default Search;

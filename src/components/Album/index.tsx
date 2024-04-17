@@ -14,7 +14,6 @@ function Album() {
     async function getMusicsAsync() {
       if (id) {
         const [album, ...songs] = await getMusics(id);
-        console.log(album, songs);
         setMusics({ album, songs });
         setLoading(false);
       }
@@ -23,7 +22,9 @@ function Album() {
   }, [id]);
 
   if (loading) {
-    return <Loading />;
+    return (
+      <Loading />
+    );
   }
 
   if (!musics?.album) {
@@ -34,6 +35,7 @@ function Album() {
       </>
     );
   }
+
   return (
     <>
       <h2 data-testid="album-name">
