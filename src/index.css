@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(51, 101, 138);
+  height: 100vh;
 }
 
 code {
@@ -16,4 +18,42 @@ code {
   align-items: center;
   display: flex;
   justify-content: center;
+}
+
+.container-bg {
+  /* background-color: rgb(57, 51, 138); */
+  background-color: rgb(134, 187, 216);
+}
+
+.button-bg {
+  background-color: rgb(51, 138, 119);
+}
+
+.button-label-bg {
+  /* background-color: rgb(97, 120, 138); */
+  background-color: rgb(172, 228, 170);
+}
+
+.rounded-square {
+  border-radius: 10px;
+}
+
+.rounded {
+  border-radius: 100px;
+}
+
+.border-black {
+  border: 1px solid black;
+}
+
+.padding-10 {
+  padding: 10px;
+}
+
+.vertical-padding-30 {
+  padding: 0 30px;
+}
+
+.clearer {
+  background-color: rgba(255, 255, 255, 0.3);
 }

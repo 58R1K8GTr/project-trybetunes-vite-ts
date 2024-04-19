@@ -58,8 +58,7 @@ function Search() {
           Pesquisar
         </button>
       </form>
-      { executionState === 'loading' && <Loading /> }
-      { executionState === 'finished' && resultSearch }
+      { executionState === 'loading' ? <Loading /> : resultSearch }
     </>
   );
 }

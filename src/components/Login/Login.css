@@ -1,0 +1,34 @@
+.div-main {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+  width: 450px;
+}
+
+.login-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.label-login {
+  padding-left: 30px;
+}
+
+.input-login {
+  border-radius: 100px;
+  margin-left: 10px;
+}
+
+.input-login:focus {
+  outline: none;
+}
+

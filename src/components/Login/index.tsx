@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createUser } from '../../services/userAPI';
 import Loading from '../Loading';
+import './Login.css';
 
 function Login() {
   const [disabled, setDisabled] = useState(true);
@@ -25,23 +26,39 @@ function Login() {
     html = (<Loading />);
   } else {
     html = (
-      <form
-        className="login-container"
-        onSubmit={ (event) => event.preventDefault() }
-      >
-        <input
-          onChange={ (event) => handleChange(event) }
-          type="text"
-          data-testid="login-name-input"
-        />
-        <button
-          disabled={ disabled }
-          onClick={ handleClick }
-          data-testid="login-submit-button"
+      <div className="div-main">
+        <form
+          className="form-login rounded-square border-black container-bg"
+          onSubmit={ (event) => event.preventDefault() }
         >
-          Entrar
-        </button>
-      </form>
+          <h1>Bem vindo!</h1>
+          <div
+            className="login-container"
+          >
+            <label
+              htmlFor="input-login"
+              className="button-label-bg label-login rounded"
+            >
+              Usuário:
+              <input
+                id="input-login"
+                className="padding-10 rounded-square input-login clearer border-black"
+                onChange={ (event) => handleChange(event) }
+                type="text"
+                data-testid="login-name-input"
+              />
+            </label>
+            <button
+              className="border-black rounded vertical-padding-30 button-label-bg"
+              disabled={ disabled }
+              onClick={ handleClick }
+              data-testid="login-submit-button"
+            >
+              Entrar
+            </button>
+          </div>
+        </form>
+      </div>
     );
   }
 
