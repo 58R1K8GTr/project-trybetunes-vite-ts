@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(51, 101, 138);
   height: 100vh;
+  padding: 0;
 }
 
 code {
@@ -21,16 +22,10 @@ code {
 }
 
 .container-bg {
-  /* background-color: rgb(57, 51, 138); */
   background-color: rgb(134, 187, 216);
 }
 
-.button-bg {
-  background-color: rgb(51, 138, 119);
-}
-
 .button-label-bg {
-  /* background-color: rgb(97, 120, 138); */
   background-color: rgb(172, 228, 170);
 }
 
@@ -56,4 +51,12 @@ code {
 
 .clearer {
   background-color: rgba(255, 255, 255, 0.3);
+}
+
+.border-orange-panetone {
+  border: 6px solid rgb(242, 100, 25);
+}
+
+.orange-panetone-bg {
+  background-color: rgb(242, 100, 25);
 }

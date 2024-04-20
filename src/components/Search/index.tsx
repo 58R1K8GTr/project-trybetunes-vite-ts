@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Loading from '../Loading';
 import searchAlbumsAPI from '../../services/searchAlbumsAPI';
 import AlbumCard from '../AlbumCard';
+import './Search.css';
 
 function Search() {
   const [disabled, setDisabled] = useState(true);
@@ -21,8 +22,12 @@ function Search() {
     if (result.length) {
       resultSearchHtml = (
         <>
-          <h2>{ `Resultado de álbuns de: ${name}` }</h2>
-          <div>
+          <h2
+            className="orange-panetone-bg padding-10 rounded"
+          >
+            { `Resultado de álbuns de: ${name}` }
+          </h2>
+          <div className="div-albums-cards">
             {
               result.map((album) => {
                 return <AlbumCard key={ album.artworkUrl100 } album={ album } />;
@@ -40,17 +45,20 @@ function Search() {
   }
 
   return (
-    <>
+    <div className="div-search">
       <form
+        className="rounded-square border-black container-bg form-search"
         onSubmit={ (event) => event.preventDefault() }
       >
         <input
+          className="rounded button-label-bg padding-10"
           value={ name }
           onChange={ (event) => handleChange(event) }
           type="text"
           data-testid="search-artist-input"
         />
         <button
+          className="rounded vertical-padding-30 padding-10"
           onClick={ handleClick }
           disabled={ disabled }
           data-testid="search-artist-button"
@@ -59,7 +67,7 @@ function Search() {
         </button>
       </form>
       { executionState === 'loading' ? <Loading /> : resultSearch }
-    </>
+    </div>
   );
 }
 
