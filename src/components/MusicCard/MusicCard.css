@@ -1,0 +1,13 @@
+.music-card {
+  align-items: center;
+  display: flex;
+  gap: 30px;
+}
+
+.without-display {
+  display: none;
+}
+
+.audio {
+  border-radius: 100px;
+}

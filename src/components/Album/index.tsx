@@ -4,6 +4,7 @@ import getMusics from '../../services/musicsAPI';
 import MusicCard from '../MusicCard';
 import { AlbumType, SongType } from '../../types';
 import Loading from '../Loading';
+import './Album.css';
 
 function Album() {
   const { id } = useParams();
@@ -37,7 +38,9 @@ function Album() {
   }
 
   return (
-    <>
+    <div
+      className="div-album"
+    >
       <h2 data-testid="album-name">
         { musics?.album.collectionName }
       </h2>
@@ -51,7 +54,7 @@ function Album() {
             return <MusicCard key={ trackId } info={ newObject } />;
           })
       }
-    </>
+    </div>
   );
 }
 

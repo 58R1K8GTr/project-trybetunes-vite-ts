@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { SongType } from '../../types';
 import checkedHeart from '../../images/checked_heart.png';
 import emptyHeart from '../../images/empty_heart.png';
+import './MusicCard.css';
 
 function MusicCard({ info }: { info: SongType }) {
   const { trackId, trackName, previewUrl } = info;
@@ -19,27 +20,29 @@ function MusicCard({ info }: { info: SongType }) {
   }
 
   return (
-    <>
-      <label htmlFor={ idAudio }>
-        { trackName }
-        <audio
-          id={ idAudio }
-          data-testid="audio-component"
-          src={ previewUrl }
-          controls
-        >
-          <track kind="captions" />
-          O seu navegador não suporta o elemento
-          {' '}
-          <code>audio</code>
-          .
-        </audio>
-      </label>
+    <div
+      className="music-card border-black rounded-square container-bg"
+    >
+      <p>{ trackName }</p>
+      <audio
+        className="audio"
+        id={ idAudio }
+        data-testid="audio-component"
+        src={ previewUrl }
+        controls
+      >
+        <track kind="captions" />
+        O seu navegador não suporta o elemento
+        {' '}
+        <code>audio</code>
+        .
+      </audio>
       <label
         data-testid={ `checkbox-music-${trackId}` }
         htmlFor={ `checkbox-music-${trackId}` }
       >
         <input
+          className="without-display"
           checked={ favorite }
           type="checkbox"
           name="favorite"
@@ -48,7 +51,7 @@ function MusicCard({ info }: { info: SongType }) {
         />
         <img src={ image } alt="favorite" />
       </label>
-    </>
+    </div>
   );
 }
 
