@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+  margin-left: 20px;
+}
+
+nav * {
+  text-decoration: none;
+}
+
+.header > h3 {
+  align-self: baseline;
+  margin-left: 20px;
+}

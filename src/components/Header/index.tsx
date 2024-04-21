@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { getUser } from '../../services/userAPI';
 import { UserType } from '../../types';
 import Loading from '../Loading';
+import './Header.css';
 
 function Header() {
   const [loading, setLoading] = useState(true);
@@ -23,27 +24,33 @@ function Header() {
 
   return (
     <header
+      className="header container-bg"
       data-testid="header-component"
     >
-      <NavLink
-        to="/search"
-        data-testid="link-to-search"
+      <nav
+        className="nav"
       >
-        search
-      </NavLink>
-      <NavLink
-        to="/favorites"
-        data-testid="link-to-favorites"
-      >
-        favoritos
-      </NavLink>
-      <NavLink
-        to="/profile"
-        data-testid="link-to-profile"
-      >
-        profile
-      </NavLink>
+        <NavLink
+          to="/search"
+          data-testid="link-to-search"
+        >
+          search
+        </NavLink>
+        <NavLink
+          to="/favorites"
+          data-testid="link-to-favorites"
+        >
+          favoritos
+        </NavLink>
+        <NavLink
+          to="/profile"
+          data-testid="link-to-profile"
+        >
+          profile
+        </NavLink>
+      </nav>
       <h3
+        className="border-black rounded-square vertical-padding-30"
         data-testid="header-user-name"
       >
         { user && user.name }
